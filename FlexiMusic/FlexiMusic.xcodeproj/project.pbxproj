@@ -14,7 +14,7 @@
 		1A074FCA2C8746DA008D4967 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A074FC92C8746DA008D4967 /* TabBarController.swift */; };
 		1A074FD22C874946008D4967 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A074FD12C874946008D4967 /* SearchTableViewController.swift */; };
 		1A074FD42C874B05008D4967 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A074FD32C874B05008D4967 /* LibraryViewController.swift */; };
-		1A074FD62C897D12008D4967 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A074FD52C897D12008D4967 /* Track.swift */; };
+		1A074FE12C8A1103008D4967 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A074FE02C8A1103008D4967 /* SearchResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		1A074FC92C8746DA008D4967 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1A074FD12C874946008D4967 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		1A074FD32C874B05008D4967 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
-		1A074FD52C897D12008D4967 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		1A074FE02C8A1103008D4967 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +46,7 @@
 			children = (
 				1A074FB42C8742F5008D4967 /* FlexiMusic */,
 				1A074FB32C8742F5008D4967 /* Products */,
+				1A074FDD2C89FEA2008D4967 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,9 +109,16 @@
 		1A074FD72C897D55008D4967 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1A074FD52C897D12008D4967 /* Track.swift */,
+				1A074FE02C8A1103008D4967 /* SearchResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1A074FDD2C89FEA2008D4967 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +137,8 @@
 			dependencies = (
 			);
 			name = FlexiMusic;
+			packageProductDependencies = (
+			);
 			productName = FlexiMusic;
 			productReference = 1A074FB22C8742F5008D4967 /* FlexiMusic.app */;
 			productType = "com.apple.product-type.application";
@@ -157,6 +167,8 @@
 				Base,
 			);
 			mainGroup = 1A074FA92C8742F5008D4967;
+			packageReferences = (
+			);
 			productRefGroup = 1A074FB32C8742F5008D4967 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -185,10 +197,10 @@
 			files = (
 				1A074FCA2C8746DA008D4967 /* TabBarController.swift in Sources */,
 				1A074FD42C874B05008D4967 /* LibraryViewController.swift in Sources */,
+				1A074FE12C8A1103008D4967 /* SearchResponse.swift in Sources */,
 				1A074FB62C8742F5008D4967 /* AppDelegate.swift in Sources */,
 				1A074FB82C8742F5008D4967 /* SceneDelegate.swift in Sources */,
 				1A074FD22C874946008D4967 /* SearchTableViewController.swift in Sources */,
-				1A074FD62C897D12008D4967 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

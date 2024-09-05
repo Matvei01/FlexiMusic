@@ -8,9 +8,11 @@
 import UIKit
 
 final class SearchTableViewController: UITableViewController {
-
+    
     private let tracks = Track.getTrackList()
-    private let searchController = UISearchController(searchResultsController: nil)
+    private let searchController = UISearchController(
+        searchResultsController: nil
+    )
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,7 @@ extension SearchTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
@@ -58,6 +60,7 @@ extension SearchTableViewController {
 // MARK: - UISearchBarDelegate
 extension SearchTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        
+        }
     }
-}
+
