@@ -10,16 +10,33 @@ import UIKit
 final class SearchTableViewController: UITableViewController {
 
     private let tracks = Track.getTrackList()
+    private let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerTableViewCell()
+        setupSearchBar()
+    }
+}
+
+// MARK: - Private Methods
+extension SearchTableViewController {
+    private func registerTableViewCell() {
         tableView.register(
             UITableViewCell.self,
             forCellReuseIdentifier: "cell"
         )
     }
+    
+    private func setupSearchBar() {
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.delegate = self
+    }
+}
 
-    // MARK: - Table view data source
+// MARK: - UITableViewDataSource
+extension SearchTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }
@@ -35,5 +52,12 @@ final class SearchTableViewController: UITableViewController {
         content.image = UIImage(systemName: "music.mic.circle")
         cell.contentConfiguration = content
         return cell
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension SearchTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
 }
