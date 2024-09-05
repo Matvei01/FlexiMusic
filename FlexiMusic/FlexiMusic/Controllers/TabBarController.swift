@@ -55,12 +55,12 @@ extension TabBarController {
         appearance.configureWithTransparentBackground()
         appearance.stackedLayoutAppearance.normal.titleTextAttributes = [
             .foregroundColor: UIColor.gray,
-            .font: UIFont.systemFont(ofSize: 13)
+            .font: UIFont.systemFont(ofSize: 12)
         ]
         appearance.stackedLayoutAppearance.normal.iconColor = UIColor.gray
         appearance.stackedLayoutAppearance.selected.titleTextAttributes = [
             .foregroundColor: UIColor.systemPink,
-            .font: UIFont.systemFont(ofSize: 13)
+            .font: UIFont.systemFont(ofSize: 12)
         ]
         appearance.stackedLayoutAppearance.selected.iconColor = UIColor.systemPink
         
