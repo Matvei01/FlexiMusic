@@ -1,0 +1,43 @@
+//
+//  APIManager.swift
+//  FlexiMusic
+//
+//  Created by Matvei Khlestov on 05.09.2024.
+//
+
+import Foundation
+
+final class APIManager {
+    static let shared = APIManager()
+    
+    private init() {}
+    
+    func createRequest(searchTerm: String) -> URLRequest? {
+        let parameters = prepareParameters(searchTerm: searchTerm)
+        
+        guard let url = self.url(parameters: parameters) else {
+            return nil
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        return request
+    }
+    
+    private func prepareParameters(searchTerm: String) -> [String: String] {
+        let limit: Int = 50
+        return [
+            "term": searchTerm,
+            "limit": String(limit)
+        ]
+    }
+    
+    private func url(parameters: [String: String]) -> URL? {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "itunes.apple.com"
+        components.path = "/search"
+        components.queryItems = parameters.map { URLQueryItem(name: $0, value: $1) }
+        return components.url
+    }
+}

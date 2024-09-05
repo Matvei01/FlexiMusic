@@ -9,7 +9,7 @@ import UIKit
 
 final class SearchTableViewController: UITableViewController {
     
-    private let tracks = Track.getTrackList()
+    private let tracks = [Track]()
     private let searchController = UISearchController(
         searchResultsController: nil
     )
@@ -40,7 +40,7 @@ extension SearchTableViewController {
 // MARK: - UITableViewDataSource
 extension SearchTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        tracks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
