@@ -90,7 +90,7 @@ extension SearchTableViewController: UISearchBarDelegate {
         }
         
         searchTimer?.invalidate()
-        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false, block: { _ in
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
             self.fetchTracks(searchTerm: trimmedText)
         })
     }

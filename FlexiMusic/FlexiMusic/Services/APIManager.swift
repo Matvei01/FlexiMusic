@@ -28,10 +28,12 @@ final class APIManager {
     
     private func prepareParameters(searchTerm: String) -> [String: String] {
         let limit: Int = 100
+        let media: String = "music"
         let formattedSearchTerm = searchTerm.replacingOccurrences(of: " ", with: "+")
         return [
             "term": formattedSearchTerm.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? formattedSearchTerm,
-            "limit": String(limit)
+            "limit": String(limit),
+            "media": media
         ]
     }
     
