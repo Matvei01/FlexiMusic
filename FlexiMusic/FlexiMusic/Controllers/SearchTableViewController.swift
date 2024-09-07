@@ -9,7 +9,9 @@ import UIKit
 
 final class SearchTableViewController: UITableViewController {
     
-    private let tracks = Track.getTrackList()
+    private var tracks = [Track]()
+    private var searchTimer: Timer?
+    private let networkManager = NetworkManager.shared
     private let searchController = UISearchController(
         searchResultsController: nil
     )
@@ -35,12 +37,25 @@ extension SearchTableViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = self
     }
+    
+    private func fetchTracks(searchTerm: String) {
+        networkManager.fetchTracks(searchTerm: searchTerm) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let tracks):
+                self.tracks = tracks
+            case .failure(let error):
+                print("Error in fetch tracks: \(error)")
+            }
+            self.tableView.reloadData()
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
 extension SearchTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        tracks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,6 +67,7 @@ extension SearchTableViewController {
         content.text = track.trackName
         content.secondaryText = track.artistName
         content.image = UIImage(systemName: "music.mic.circle")
+        
         cell.contentConfiguration = content
         return cell
     }
@@ -60,7 +76,18 @@ extension SearchTableViewController {
 // MARK: - UISearchBarDelegate
 extension SearchTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let trimmedText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        guard !trimmedText.isEmpty else {
+            self.tracks = []
+            self.tableView.reloadData()
+            return
         }
+        
+        searchTimer?.invalidate()
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false, block: { _ in
+            self.fetchTracks(searchTerm: trimmedText)
+        })
     }
+}
 

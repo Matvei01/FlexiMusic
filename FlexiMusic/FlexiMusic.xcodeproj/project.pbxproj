@@ -15,6 +15,8 @@
 		1A074FD22C874946008D4967 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A074FD12C874946008D4967 /* SearchTableViewController.swift */; };
 		1A074FD42C874B05008D4967 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A074FD32C874B05008D4967 /* LibraryViewController.swift */; };
 		1A074FE12C8A1103008D4967 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A074FE02C8A1103008D4967 /* SearchResponse.swift */; };
+		1A074FE42C8A14D8008D4967 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A074FE32C8A14D8008D4967 /* APIManager.swift */; };
+		1A074FE62C8A1AC4008D4967 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A074FE52C8A1AC4008D4967 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		1A074FD12C874946008D4967 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		1A074FD32C874B05008D4967 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		1A074FE02C8A1103008D4967 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		1A074FE32C8A14D8008D4967 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		1A074FE52C8A1AC4008D4967 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 		1A074FB42C8742F5008D4967 /* FlexiMusic */ = {
 			isa = PBXGroup;
 			children = (
+				1A074FE22C8A14A1008D4967 /* Services */,
 				1A074FD72C897D55008D4967 /* Models */,
 				1A074FCB2C874715008D4967 /* Controllers */,
 				1A074FCE2C87474C008D4967 /* LaunchScreen */,
@@ -119,6 +124,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A074FE22C8A14A1008D4967 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A074FE32C8A14D8008D4967 /* APIManager.swift */,
+				1A074FE52C8A1AC4008D4967 /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +213,10 @@
 				1A074FD42C874B05008D4967 /* LibraryViewController.swift in Sources */,
 				1A074FE12C8A1103008D4967 /* SearchResponse.swift in Sources */,
 				1A074FB62C8742F5008D4967 /* AppDelegate.swift in Sources */,
+				1A074FE62C8A1AC4008D4967 /* NetworkManager.swift in Sources */,
 				1A074FB82C8742F5008D4967 /* SceneDelegate.swift in Sources */,
 				1A074FD22C874946008D4967 /* SearchTableViewController.swift in Sources */,
+				1A074FE42C8A14D8008D4967 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

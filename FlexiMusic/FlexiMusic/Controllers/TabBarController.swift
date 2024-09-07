@@ -52,7 +52,6 @@ extension TabBarController {
     
     private func configureTabBarAppearance() {
         let appearance = UITabBarAppearance()
-        appearance.configureWithTransparentBackground()
         appearance.stackedLayoutAppearance.normal.titleTextAttributes = [
             .foregroundColor: UIColor.gray,
             .font: UIFont.systemFont(ofSize: 12)
