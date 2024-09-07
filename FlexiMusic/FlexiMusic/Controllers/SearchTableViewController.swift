@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class SearchTableViewController: UITableViewController {
     
@@ -66,7 +67,11 @@ extension SearchTableViewController {
         var content = cell.defaultContentConfiguration()
         content.text = track.trackName
         content.secondaryText = track.artistName
-        content.image = UIImage(systemName: "music.mic.circle")
+        if let url = track.artworkUrl100 {
+            let imageView = UIImageView()
+            imageView.kf.setImage(with: url)
+            content.image = imageView.image
+        }
         
         cell.contentConfiguration = content
         return cell
