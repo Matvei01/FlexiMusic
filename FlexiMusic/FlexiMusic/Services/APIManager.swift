@@ -19,15 +19,18 @@ final class APIManager {
             return nil
         }
         
+        print("Request URL: \(url)")
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         return request
     }
     
     private func prepareParameters(searchTerm: String) -> [String: String] {
-        let limit: Int = 50
+        let limit: Int = 100
+        let formattedSearchTerm = searchTerm.replacingOccurrences(of: " ", with: "+")
         return [
-            "term": searchTerm,
+            "term": formattedSearchTerm.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? formattedSearchTerm,
             "limit": String(limit)
         ]
     }
